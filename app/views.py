@@ -5,7 +5,8 @@ from .models import Entry
 
 # Create your views here.
 def home(request):
-    return HttpResponse("You are in Home")
+    entries = Entry.objects.all()
+    return render(request,'home.html',{'entries':entries})
 
 def create_entry(request):
     form = EntryForm()
