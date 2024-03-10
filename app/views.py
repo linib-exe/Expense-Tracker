@@ -31,4 +31,6 @@ def update_entry(request,id):
     return render(request,'create_entry.html',{'form':form})
 
 def delete_entry(request,id):
-    pass
+    entry = Entry.objects.get(id=id)
+    entry.delete()
+    return redirect('home')
