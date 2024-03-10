@@ -1,0 +1,10 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.title }}
+    {{ form.remarks }}
+    {{ form.amount }}
+    {{ form.category }}
+    {{ form.tx_type }}
+    {{ form.proof }}
+    <input type="submit" value="Submit">
+</form>
